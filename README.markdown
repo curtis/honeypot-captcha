@@ -22,25 +22,25 @@ any suggestions you may have.
 
 Simply specify that the form has a honeypot in the HTML options hash:
 
-<% form_for Comment.new, :html => { :honeypot => true } do |form| -%>
-  ...
-<% end -%>
+    <% form_for Comment.new, :html => { :honeypot => true } do |form| -%>
+      ...
+    <% end -%>
 
 ### form_tag with block
 
 Simply specify that the form has a honeypot in the options hash:
 
-<% form_tag comments_path, :honeypot => true do -%>
-  ...
-<% end -%>
+    <% form_tag comments_path, :honeypot => true do -%>
+      ...
+    <% end -%>
 
 ### form_tag without block
 
 Simply specify that the form has a honeypot in the options hash:
 
-<%= form_tag comments_path, :honeypot => true -%>
-  ...
-</form>
+    <%= form_tag comments_path, :honeypot => true -%>
+      ...
+    </form>
 
 ## Note on Patches/Pull Requests
  
