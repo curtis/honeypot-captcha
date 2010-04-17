@@ -6,7 +6,7 @@ module ActionView
         honeypot = options.delete(:honeypot)
         html = form_tag_without_honeypot(url_for_options, options, *parameters_for_url, &block)
         if honeypot
-          captcha = (Rails.version > "3") ? honey_pot_captcha.html_safe : honey_pot_captcha
+          captcha = "".respond_to?(:html_safe) ? honey_pot_captcha.html_safe : honey_pot_captcha
           if block_given?
             html.insert(html.index('</form>'), captcha)
           else
