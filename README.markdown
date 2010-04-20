@@ -54,6 +54,10 @@ Simply specify that the form has a honeypot in the options hash:
 
 Written by [Curtis Miller](http://millarian.com) of [Flatterline](http://flatterline.com)
 
+### Contributors
+
+* [Eric Saxby](http://github.com/sax)
+
 ## Copyright
 
 Copyright (c) 2010 Curtis Miller. See LICENSE for details.
