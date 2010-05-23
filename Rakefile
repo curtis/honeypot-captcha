@@ -10,7 +10,7 @@ begin
     gem.email = "curtis@flatterline.com"
     gem.homepage = "http://github.com/curtis/honeypot-captcha"
     gem.authors = ["curtis"]
-    gem.add_development_dependency "rspec", ">= 1.2.9"
+    # gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

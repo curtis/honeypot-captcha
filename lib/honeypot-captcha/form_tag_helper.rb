@@ -21,13 +21,16 @@ module ActionView
 
       def honey_pot_captcha
         html_ids = []
-        honeypot_fields.collect do |f|
+        honeypot_fields.collect do |f, l|
           html_ids << (html_id = "#{f}_hp_#{Time.now.to_i}")
-          content_tag(:div, send([:text_field_tag, :text_area_tag][rand(2)], f), :id => html_id)
-        end.join +
-        content_tag(:style, :type => 'text/css', :media => 'screen') do
-          "#{html_ids.map { |i| "##{i}" }.join(', ')} { display:none; }"
-        end
+          content_tag :div, :id => html_id do
+            content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => "scoped") do
+              "#{html_ids.map { |i| "##{i}" }.join(', ')} { display:none; }"
+            end +
+            label_tag(f, l) +
+            send([:text_field_tag, :text_area_tag][rand(2)], f)
+          end
+        end.join
       end
     end
   end

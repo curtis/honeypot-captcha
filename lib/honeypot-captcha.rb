@@ -3,11 +3,11 @@ require 'honeypot-captcha/form_tag_helper'
 module HoneypotCaptcha
   module SpamProtection
     def honeypot_fields
-      [:a_comment_body]
+      { :a_comment_body => 'Do not fill in this field' }
     end
 
     def protect_from_spam
-      head :ok if honeypot_fields.any? { |f| !params[f].blank? }
+      head :ok if honeypot_fields.any? { |f,l| !params[f].blank? }
     end
 
     def self.included(base) # :nodoc:
