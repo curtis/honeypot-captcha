@@ -1,6 +1,6 @@
 # Honeypot Captcha
 
-A simple way to add honeypot captchas in your Rails forms.
+*The simplest way to add honeypot captchas in your Rails forms.*
 
 Honeypot captchas work off the premise that you can present different form
 fields to a spam bot than you do to a real user. Spam bots will typically try
@@ -12,6 +12,11 @@ submitted with values. If they are, we assume that we encountered a spam bot.
 * [Honeypot Captcha by Phil Haack](http://haacked.com/archive/2007/09/11/honeypot-captcha.aspx)
 * [Stopping spambots with hashes and honeypots](http://nedbatchelder.com/text/stopbots.html)
 
+## Installation
+
+In your Gemfile, simply add
+
+  gem 'honeypot-captcha'
 
 ## Usage
 
