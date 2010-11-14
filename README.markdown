@@ -16,7 +16,7 @@ submitted with values. If they are, we assume that we encountered a spam bot.
 
 In your Gemfile, simply add
 
-`gem 'honeypot-captcha'`
+    gem 'honeypot-captcha'
 
 ## Usage
 
