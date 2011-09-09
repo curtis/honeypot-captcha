@@ -47,6 +47,17 @@ Simply specify that the form has a honeypot in the options hash:
       ...
     </form>
 
+## Non-RESTfull resources
+
+If you have a certain form that is submitted to a non-resource-full controller, but you still want to protect this form, you should add a before-filter to the controller processing the form data:
+
+    class ProtectedController < ApplicationController
+      before_filter :protect_from_spam, :only => :save_data
+      ...
+    end
+
+(assuming the form gets processed by calling the save_data action on the ProtectedController)
+
 ## Note on Patches/Pull Requests
  
 * Fork the project.
