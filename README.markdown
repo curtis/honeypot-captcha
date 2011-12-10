@@ -56,8 +56,8 @@ Simply specify that the form has a honeypot in the options hash:
 * Send me a pull request. Bonus points for topic branches.
 
 ## Author
-
-Written by [Curtis Miller](http://millarian.com) of [Flatterline](http://flatterline.com)
+Created by [Curtis Miller](http://millarian.com) of Flatterline, a
+[Ruby on Rails development company](http://flatterline.com).
 
 ### Contributors
 
