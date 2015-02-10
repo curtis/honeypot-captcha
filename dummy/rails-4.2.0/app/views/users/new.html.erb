@@ -1,0 +1,17 @@
+<h2>without honeypot</h1>
+
+<h2>form_for</h2>
+
+<%= form_for User.new do |form| -%>
+  <%= form.text_field :name  %>
+  <%= form.submit  %>
+<% end -%>
+
+<h1>with honeypot</h1>
+
+<h2>form_for</h2>
+
+<%= form_for User.new, :html => { :honeypot => true } do |form| -%>
+  <%= form.text_field :name  %>
+  <%= form.submit  %>
+<% end -%>
