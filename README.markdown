@@ -27,7 +27,7 @@ any suggestions you may have.
 
 Simply specify that the form has a honeypot in the HTML options hash:
 
-    <% form_for Comment.new, :html => { :honeypot => true } do |form| -%>
+    <%= form_for Comment.new, :html => { :honeypot => true } do |form| -%>
       ...
     <% end -%>
 
@@ -35,7 +35,7 @@ Simply specify that the form has a honeypot in the HTML options hash:
 
 Simply specify that the form has a honeypot in the options hash:
 
-    <% form_tag comments_path, :honeypot => true do -%>
+    <%= form_tag comments_path, :honeypot => true do -%>
       ...
     <% end -%>
 
