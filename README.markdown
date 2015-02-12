@@ -80,13 +80,14 @@ add your own custom field names and values. For example:
 * Send me a pull request. Bonus points for topic branches.
 
 ## Author
-Created by [Curtis Miller](http://millarian.com) of Flatterline, a
-[Ruby on Rails development company](http://flatterline.com).
+Created by [Curtis Miller](http://millarian.com) of Velocity Labs, a
+[Ruby on Rails development company](http://velocitylabs.io).
 
 ### Contributors
 
 * [Eric Saxby](http://github.com/sax)
 * [Bernard Grymonpon](https://github.com/wonko)
+* [Dave Tapley](https://github.com/dukedave)
 
 ## Copyright
 
