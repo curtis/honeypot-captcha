@@ -22,7 +22,7 @@ In your Gemfile, simply add
 
 I've tried to make it pretty simple to add a honeypot captcha, but I'm open to
 any suggestions you may have. By default, `create` and `update` actions are
-protected.
+protected. For other actions, see [below](#protection-for-actions-other-than-create-and-update).
 
 ### form_for
 
@@ -50,10 +50,14 @@ Simply specify that the form has a honeypot in the options hash:
 
 ### Protection for actions other than `create` and `update`
 
-If you have a non-RESTful action that needs honeypot protection, simply
-add the before filter for that action in your controller. For example:
+If you are submitting a form to a non-RESTful action and require
+honeypot protection, simply add the before filter for that action
+in your controller. For example:
 
-    prepend_before_filter :protect_from_spam, :only => [:subscribe]
+    class NewsletterController < ApplicationController
+      prepend_before_filter :protect_from_spam, :only => [:subscribe]
+      ...
+    end
 
 ### Customizing the honeypot fields
 
@@ -66,7 +70,6 @@ add your own custom field names and values. For example:
         :another_thingy => 'Really... do not fill out!'
       }
     end
-
 
 ## Note on Patches/Pull Requests
 
@@ -83,6 +86,7 @@ Created by [Curtis Miller](http://millarian.com) of Flatterline, a
 ### Contributors
 
 * [Eric Saxby](http://github.com/sax)
+* [Bernard Grymonpon](https://github.com/wonko)
 
 ## Copyright
 
