@@ -55,6 +55,19 @@ add the before filter for that action in your controller. For example:
 
     prepend_before_filter :protect_from_spam, :only => [:subscribe]
 
+### Customizing the honeypot fields
+
+Override the `honeypot_fields` method within `ApplicationController` to
+add your own custom field names and values. For example:
+
+    def honeypot_fields
+      {
+        :my_custom_comment_body => 'Do not fill in this field, sucka!',
+        :another_thingy => 'Really... do not fill out!'
+      }
+    end
+
+
 ## Note on Patches/Pull Requests
 
 * Fork the project.
