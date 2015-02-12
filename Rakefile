@@ -14,12 +14,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "honeypot-captcha"
-  gem.summary = %Q{A simple way to add honeypot captchas to Rails forms}
+  gem.authors     = ["curtis"]
   gem.description = %Q{A simple way to add honeypot captchas to Rails forms}
-  gem.email = "curtis@flatterline.com"
-  gem.homepage = "http://github.com/curtis/honeypot-captcha"
-  gem.authors = ["curtis"]
+  gem.email       = "curtis@velocitylabs.io"
+  gem.files       = FileList['lib/**/*.rb', 'LICENSE', 'README.markdown', 'VERSION']
+  gem.homepage    = "http://github.com/curtis/honeypot-captcha"
+  gem.name        = "honeypot-captcha"
+  gem.summary     = %Q{A simple way to add honeypot captchas to Rails forms}
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
