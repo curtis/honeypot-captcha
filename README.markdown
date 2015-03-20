@@ -71,6 +71,13 @@ add your own custom field names and values. For example:
       }
     end
 
+Override the `honeypot_string` method within `ApplicationController` to
+disguise the string that will be included in the honeypot name. For example:
+
+    def honeypot_string
+      'im-not-a-honeypot-at-all'
+    end
+
 ## Note on Patches/Pull Requests
 
 * Fork the project.
