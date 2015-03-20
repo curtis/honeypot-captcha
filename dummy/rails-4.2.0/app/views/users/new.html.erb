@@ -24,8 +24,8 @@
 <h1>with honeypot</h1>
 
 <style type="text/css" media="all">
-[id*='_hp_'] { display: block !important; background-color: pink; }
-[id*='_hp_']:before { content: "Normally hidden:   "; }
+[id*='_<%= honeypot_string %>_'] { display: block !important; background-color: pink; }
+[id*='_<%= honeypot_string %>_']:before { content: "Normally hidden:   "; }
 </style>
 
 <h2>form_for</h2>
