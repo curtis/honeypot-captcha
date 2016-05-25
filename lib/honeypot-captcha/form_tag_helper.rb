@@ -19,17 +19,25 @@ module ActionView
 
     private
 
+      def style_attributes
+        honeypot_style_class ? {:class => honeypot_style_class} : {}
+      end
+
+      def style_tag(html_ids)
+        honeypot_style_class ? '' : content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => "scoped") { "#{html_ids.map { |i| "##{i}" }.join(', ')} { display:none; }" }
+      end
+
       def honey_pot_captcha
         html_ids = []
         honeypot_fields.collect do |f, l|
           html_ids << (html_id = "#{f}_#{honeypot_string}_#{Time.now.to_i}")
-          content_tag :div, :id => html_id do
-            content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => "scoped") do
-              "#{html_ids.map { |i| "##{i}" }.join(', ')} { display:none; }"
-            end +
+
+          content_tag :div, {:id => html_id}.merge(style_attributes) do
+            style_tag(html_ids).html_safe +
             label_tag(f, l) +
             send([:text_field_tag, :text_area_tag][rand(2)], f)
           end
+
         end.join
       end
     end
