@@ -22,6 +22,9 @@ module ActionView
       def honey_pot_captcha
         html_ids = []
         honeypot_fields.collect do |f, l|
+          # the only change is swapping f and honeypot_string because
+          # when f is a number it doesnt work. make sure honeypot_string
+          # is also not a number ok?
           html_ids << (html_id = "#{honeypot_string}_#{f}_#{Time.now.to_i}")
           content_tag :div, :id => html_id do
             content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => "scoped") do
