@@ -18,8 +18,14 @@ module HoneypotCaptcha
       base.send :helper_method, :honeypot_fields
       base.send :helper_method, :honeypot_string
 
-      if base.respond_to? :before_filter
-        base.send :prepend_before_filter, :protect_from_spam, :only => [:create, :update]
+      callback_to_add = if base.respond_to?(:before_action)
+                          :prepend_before_action
+                        elsif base.respond_to?(:before_filter)
+                          :prepend_before_filter
+                        end
+
+      if callback_to_add
+        base.send callback_to_add, :protect_from_spam, :only => [:create, :update]
       end
     end
   end
