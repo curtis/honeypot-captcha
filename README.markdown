@@ -55,7 +55,7 @@ honeypot protection, simply add the before filter for that action
 in your controller. For example:
 
     class NewsletterController < ApplicationController
-      prepend_before_filter :protect_from_spam, :only => [:subscribe]
+      prepend_before_action :protect_from_spam, :only => [:subscribe]
       ...
     end
 
