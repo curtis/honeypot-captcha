@@ -15,7 +15,8 @@ module ActionView
         end
         html
       end
-      alias_method_chain :form_tag_html, :honeypot
+      alias_method :form_tag_html_without_honeypot, :form_tag_html
+      alias_method :form_tag_html, :form_tag_html_with_honeypot
 
     private
 
