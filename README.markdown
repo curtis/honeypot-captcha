@@ -88,6 +88,24 @@ disguise the string that will be included in the honeypot name. For example:
       'im-not-a-honeypot-at-all'
     end
 
+Override the `honeypot_style_class` method within `ApplicationController` to
+provide a non-inline CSS class that will be applied to hide honeypot fields
+(if nil, the style will be applied inline). For example:
+
+    def honeypot_style_class
+      'display-none'
+    end
+
+... assigns an HTML class for styling purposes:
+
+    <div id="login_hp_1464171481" class="display-none">
+
+... which can be styled by a CSS style within app/assets/stylesheets:
+
+    .display-none {
+      display: none;
+    }
+
 ## Note on Patches/Pull Requests
 
 * Fork the project.
