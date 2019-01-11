@@ -12,6 +12,10 @@ submitted with values. If they are, we assume that we encountered a spam bot.
 * [Honeypot Captcha by Phil Haack](http://haacked.com/archive/2007/09/11/honeypot-captcha.aspx)
 * [Stopping spambots with hashes and honeypots](http://nedbatchelder.com/text/stopbots.html)
 
+## Requirements
+
+* Rails >= 2.3.8
+
 ## Installation
 
 In your Gemfile, simply add

@@ -7,7 +7,7 @@ module ActionView
         html     = form_tag_html_without_honeypot(options)
 
         if honeypot
-          captcha = "".respond_to?(:html_safe) ? honey_pot_captcha.html_safe : honey_pot_captcha
+          captcha = honey_pot_captcha
 
           if block_given?
             html.insert(html.index('</form>'), captcha)
