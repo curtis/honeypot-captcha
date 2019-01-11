@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
       "post[title]" => 'Complex field name'
     }
   end
+
+  def honeypot_style_class
+    "hidden"
+  end
+
 end
