@@ -48,9 +48,9 @@ module ActionView
       end
 
       def style_tag(html_ids)
-        return '' if honeypot_style_class.blank?
+        return '' if honeypot_style_class.present?
         content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => "scoped") do
-          "#{html_ids.map { |i| "[id='#{i}']" }.join(', ')} { display:none; }"
+          "#{html_ids.map { |i| "[id='#{i}']" }.join(', ')} { display:none; }".html_safe
         end
       end
     end
