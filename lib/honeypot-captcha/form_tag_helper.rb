@@ -23,7 +23,7 @@ module ActionView
       def honey_pot_captcha
         html_ids = []
         honeypot_fields.collect do |f, l|
-          html_ids << (html_id = "#{f}_#{honeypot_string}_#{Time.now.to_i}")
+          html_ids << (html_id = sanitize_html_id("#{f}_#{honeypot_string}_#{Time.now.to_i}"))
           content_tag :div, :id => html_id do
             content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => "scoped") do
               "#{html_ids.map { |i| "##{i}" }.join(', ')} { display:none; }"
@@ -32,6 +32,10 @@ module ActionView
             send([:text_field_tag, :text_area_tag][rand(2)], f)
           end
         end.join
+      end
+
+      def sanitize_html_id(value)
+        value.gsub(/\]\[|[^-a-zA-Z0-9:.]/, "_")
       end
     end
   end
