@@ -24,34 +24,34 @@ module ActionView
     private
 
       def honey_pot_captcha
-        html_ids = []
-
         honeypot_fields.collect do |key, value|
-          html_ids << (html_id = sanitize_html_id("#{key}_#{honeypot_string}_#{Time.now.to_i}"))
+          html_id = sanitized_html_id(key)
 
           content_tag :div, { :id => html_id }.merge(style_attributes) do
-            style_tag(html_ids).html_safe +
+            style_tag(html_id) +
             label_tag(key, value) +
             send([:text_field_tag, :text_area_tag][rand(2)], key)
           end
 
-        end.join
+        end.join.html_safe
       end
 
-      def sanitize_html_id(html_id)
-        html_id.gsub(/\]\[|[^-a-zA-Z0-9:.]/, "_")
+      def sanitized_html_id(key)
+        "#{key}_#{honeypot_string}_#{Time.current.to_i + rand(999)}".gsub(/\]\[|[^-a-zA-Z0-9:.]/, "_")
       end
 
       def style_attributes
         return {} if honeypot_style_class.blank?
+
         { :class => honeypot_style_class }
       end
 
-      def style_tag(html_ids)
+      def style_tag(html_id)
         return '' if honeypot_style_class.present?
+
         content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => "scoped") do
-          "#{html_ids.map { |i| "[id='#{i}']" }.join(', ')} { display:none; }".html_safe
-        end
+          "[id='#{html_id}'] { display:none; }".html_safe
+        end.html_safe
       end
     end
   end
