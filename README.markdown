@@ -48,6 +48,14 @@ Simply specify that the form has a honeypot in the options hash:
       ...
     </form>
 
+### simple_form_for
+
+Simply specify that the form has a honeypot in the HTML options hash:
+
+    <%= simple_form_for Comment.new, :html => { :honeypot => true } do |form| -%>
+      ...
+    <% end -%>
+
 ### Protection for actions other than `create` and `update`
 
 If you are submitting a form to a non-RESTful action and require
