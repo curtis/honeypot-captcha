@@ -71,6 +71,8 @@ add your own custom field names and values. For example:
       }
     end
 
+NOTE: `honeypot_fields` hash keys are used at the beginning of the generated HTML id attributes. The HTML 4.01 spec states that ids must start with a letter ([A-Za-z]), so be aware of this when creating the hash keys. HTML5 is much less strict.
+
 Override the `honeypot_string` method within `ApplicationController` to
 disguise the string that will be included in the honeypot name. For example:
 
