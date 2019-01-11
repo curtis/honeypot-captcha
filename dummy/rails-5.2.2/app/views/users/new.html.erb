@@ -1,0 +1,50 @@
+<h1>without honeypot</h1>
+
+<h2>form_for</h2>
+
+<%= form_for User.new do |form| -%>
+  <%= form.text_field :name  %>
+  <%= form.submit  %>
+<% end -%>
+
+<h2>form_tag with block</h2>
+
+<%= form_tag users_path do -%>
+  <%= text_field_tag :name  %>
+  <%= submit_tag  %>
+<% end -%>
+
+<h2>form_tag without block</h2>
+
+<%= form_tag users_path -%>
+  <input id="user_name" name="user[name]" size="30" type="text">
+  <input name="commit" type="submit" value="Create User">
+</form>
+
+<h1>with honeypot</h1>
+
+<style type="text/css" media="all">
+[id*='_<%= honeypot_string %>_'] { display: block !important; background-color: pink; }
+[id*='_<%= honeypot_string %>_']:before { content: "Normally hidden:   "; }
+</style>
+
+<h2>form_for</h2>
+
+<%= form_for User.new, :html => { :honeypot => true } do |form| -%>
+  <%= form.text_field :name  %>
+  <%= form.submit  %>
+<% end -%>
+
+<h2>form_tag with block</h2>
+
+<%= form_tag users_path, :honeypot => true do -%>
+  <%= text_field_tag :name  %>
+  <%= submit_tag  %>
+<% end -%>
+
+<h2>form_tag without block</h2>
+
+<%= form_tag users_path, :honeypot => true -%>
+  <input id="user_name" name="user[name]" size="30" type="text">
+  <input name="commit" type="submit" value="Create User">
+</form>
