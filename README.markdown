@@ -118,12 +118,21 @@ provide a non-inline CSS class that will be applied to hide honeypot fields
 Created by [Curtis Miller](http://millarian.com) of Velocity Labs, a
 [Ruby on Rails development company](http://velocitylabs.io).
 
+### Collaborators
+
+* [Dave Tapley](https://github.com/dukedave)
+
 ### Contributors
+
+Thank you to all contributors!
 
 * [Eric Saxby](http://github.com/sax)
 * [Bernard Grymonpon](https://github.com/wonko)
-* [Dave Tapley](https://github.com/dukedave)
+* [rchekaluk](https://github.com/rchekaluk)
+* [Sunny Ripert](https://github.com/sunny)
+* [RandieM](https://github.com/RandieM)
+* [Wayne Steven See](https://github.com/weynsee)
 
 ## Copyright
 
-Copyright (c) 2010 Curtis Miller. See LICENSE for details.
+Copyright (c) 2010-2019 Curtis Miller. See LICENSE for details.
