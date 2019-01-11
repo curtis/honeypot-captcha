@@ -26,7 +26,7 @@ module ActionView
           html_ids << (html_id = sanitize_html_id("#{f}_#{honeypot_string}_#{Time.now.to_i}"))
           content_tag :div, :id => html_id do
             content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => "scoped") do
-              "#{html_ids.map { |i| "##{i}" }.join(', ')} { display:none; }"
+              "#{html_ids.map { |i| "[id='#{i}']" }.join(', ')} { display:none; }".html_safe
             end +
             label_tag(f, l) +
             send([:text_field_tag, :text_area_tag][rand(2)], f)
