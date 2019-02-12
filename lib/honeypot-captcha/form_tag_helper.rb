@@ -47,7 +47,7 @@ module ActionView
       end
 
       def style_tag(html_id)
-        return '' if honeypot_style_class.present?
+        return ''.html_safe if honeypot_style_class.present?
 
         content_tag(:style, :type => 'text/css', :media => 'screen', :scoped => "scoped") do
           "[id='#{html_id}'] { display:none; }".html_safe

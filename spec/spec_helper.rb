@@ -50,7 +50,7 @@ class TestView < ActionView::Base
   end
 
   def honeypot_style_class
-    nil
+    'classname'
   end
 
 end
