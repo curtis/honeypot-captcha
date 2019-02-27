@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
     "lib/honeypot-captcha/form_tag_helper.rb"
   ]
   s.homepage = "http://github.com/curtis/honeypot-captcha".freeze
-  s.rubygems_version = "3.0.2".freeze
+  s.rubygems_version = "2.7.8".freeze
   s.summary = "A simple way to add honeypot captchas to Rails forms".freeze
 
   if s.respond_to? :specification_version then
