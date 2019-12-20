@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    honeypot-captcha (0.0.3)
+    honeypot-captcha (1.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -81,7 +81,7 @@ GEM
     multi_json (1.13.1)
     nokogiri (1.10.0)
       mini_portile2 (~> 2.4.0)
-    rack (1.6.11)
+    rack (1.6.12)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.11)
