@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    honeypot-captcha (0.0.3)
+    honeypot-captcha (1.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -109,7 +109,7 @@ GEM
     msgpack (1.2.6)
     multi_json (1.13.1)
     nio4r (2.3.1)
-    nokogiri (1.10.0)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     public_suffix (3.0.3)
     puma (3.12.0)
