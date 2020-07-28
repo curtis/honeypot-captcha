@@ -53,7 +53,7 @@ GEM
       rake
       rdoc
       semver2
-    json (2.1.0)
+    json (2.3.1)
     jwt (2.1.0)
     loofah (2.2.3)
       crass (~> 1.0.2)
