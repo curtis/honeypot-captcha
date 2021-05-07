@@ -15,7 +15,7 @@ module HoneypotCaptcha
     end
 
     def protect_from_spam
-      head :ok if honeypot_fields.any? { |f,l| !params[f].blank? }
+      head :ok if honeypot_fields.any? { |f,l| !params[f].blank? || params[f].to_s.length > 0 }
     end
 
     def self.included(base) # :nodoc:
